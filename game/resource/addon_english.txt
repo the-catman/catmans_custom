@@ -1,0 +1,24 @@
+"lang"
+{ 
+	"Language" "English" 
+	"Tokens" 
+	{
+		"addon_game_name"														"Catmans Custom"
+
+        "DOTA_Tooltip_modifier_custom_hpregen"                                  "Health Regeneration"
+        "DOTA_Tooltip_modifier_custom_hpregen_Description"                      "Regenerating a small percentage of health per second!"
+
+        "DOTA_Tooltip_modifier_custom_mpregen"                                  "Mana Regeneration"
+        "DOTA_Tooltip_modifier_custom_mpregen_Description"                      "Regenerating a small percentage of mana per second!"
+
+        // Enigma
+
+        "DOTA_Tooltip_ability_custom_enigma_midnight_pulse"                     "Midnight Pulse"
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_Description"			"Steeps an area in dark resonance, dealing a percentage of the enemies max HP as damage."
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_Lore"				"A section of the world slowly descends into the void."
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_Note0"				"This ability destroys trees in its area."
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_damage_percent"		"%MAX HEALTH AS DAMAGE:"
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_radius"				"RADIUS:"
+    }
+}

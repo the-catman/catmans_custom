@@ -1,0 +1,85 @@
+"DOTAAbilities"
+{
+    "enigma_black_hole"
+	{
+		"AbilityCooldown"				"180"
+        "AbilityValues"
+		{
+            "radius"			
+			{	
+				"value"			"425"
+			}
+            "scepter_pct_damage"
+			{
+				"special_bonus_scepter"			"5"
+			}
+            "scepter_drag_speed"			
+			{
+				"special_bonus_scepter"			"200"
+			}
+        }
+    }
+    "enigma_event_horizon"
+	{
+        "AbilityValues"
+		{
+			"radius"			
+			{
+				"value"		"700"
+			}
+        }
+    }
+
+    "faceless_void_time_walk"
+	{
+        "AbilityValues"
+		{
+            "range"					
+			{
+				"special_bonus_shard"		"+200"
+			}
+			"backtrack_duration"
+			{
+				"value"										"2.0 2.05 2.1 2.15"
+            }
+        }
+    }
+
+    "faceless_void_time_lock"
+	{
+        "AbilityValues"
+		{
+			"duration"				"0.55"	
+			"duration_creep"		"1"
+			"chance_pct"			"10 15 20 25"
+			"bonus_damage"			
+			{
+				"value"				"15 20 25 30"
+				"special_bonus_unique_faceless_void_3" "+35"
+			}
+			"delay"			"0.45"
+		}
+    }
+
+    "faceless_void_chronosphere"
+	{
+        "AbilityValues"
+		{
+            "duration"				
+				{
+					"value"			"4 4.5 5"
+				}
+        }
+    }
+
+    "faceless_void_time_zone"
+	{
+        "AbilityValues"
+		{
+            "duration"				
+			{
+				"value"			"4 4.5 5"
+			}
+        }
+    }
+}

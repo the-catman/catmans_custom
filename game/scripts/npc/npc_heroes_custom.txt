@@ -1,0 +1,45 @@
+"DOTAHeroes"
+{
+    "Version" "1"
+    "npc_dota_hero_base"
+    {
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_drow_ranger"
+    {
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_nevermore"
+	{
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_vengefulspirit"
+	{
+        "StatusHealthRegen"		"0"
+    }
+	"npc_dota_hero_clinkz"
+	{
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_invoker"
+	{
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_keeper_of_the_light"
+	{
+        "StatusHealthRegen"		"0"
+    }
+    "npc_dota_hero_troll_warlord"
+	{
+        "StatusHealthRegen"     "0"
+    }
+	"npc_dota_hero_arc_warden"
+	{
+        "StatusHealthRegen"     "0"
+    }
+    "npc_dota_hero_enigma"
+	{
+		"Ability3"		"custom_enigma_midnight_pulse"
+    }
+}
+
