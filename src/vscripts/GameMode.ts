@@ -1,6 +1,4 @@
 import { reloadable } from "./lib/tstl-utils";
-import { modifier_custom_hpregen } from "./modifiers/modifier_custom_hpregen";
-import { modifier_custom_mpregen } from "./modifiers/modifier_custom_mpregen";
 
 const GOODGUYS_MAX_PLAYERS = 5;
 const BADGUYS_MAX_PLAYERS = 5;
@@ -42,22 +40,6 @@ export class GameMode {
 
     private StartGame(): void {
         print("Game starting!");
-
-        const towers = FindUnitsInRadius(
-            DotaTeam.GOODGUYS,
-            Vector(0, 0, 0),
-            undefined,
-            15000,
-            UnitTargetTeam.BOTH,
-            UnitTargetType.BUILDING,
-            UnitTargetFlags.MAGIC_IMMUNE_ENEMIES + UnitTargetFlags.INVULNERABLE,
-            FindOrder.ANY,
-            false
-        );
-
-        for(const tower of towers) {
-            tower.AddNewModifier(tower, undefined, modifier_custom_hpregen.name, {});
-        }
     }
 
     public Reload() {
@@ -97,8 +79,6 @@ export class GameMode {
                 });
                 courierMap.set(playerID, true);
             }
-            unit.AddNewModifier(unit, undefined, modifier_custom_hpregen.name, {});
-            unit.AddNewModifier(unit, undefined, modifier_custom_mpregen.name, {});
         }
     }
 }

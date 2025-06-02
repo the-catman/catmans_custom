@@ -1,45 +1,72 @@
 "DOTAHeroes"
 {
     "Version" "1"
-    "npc_dota_hero_base"
-    {
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_drow_ranger"
-    {
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_nevermore"
-	{
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_vengefulspirit"
-	{
-        "StatusHealthRegen"		"0"
-    }
-	"npc_dota_hero_clinkz"
-	{
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_invoker"
-	{
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_keeper_of_the_light"
-	{
-        "StatusHealthRegen"		"0"
-    }
-    "npc_dota_hero_troll_warlord"
-	{
-        "StatusHealthRegen"     "0"
-    }
-	"npc_dota_hero_arc_warden"
-	{
-        "StatusHealthRegen"     "0"
-    }
     "npc_dota_hero_enigma"
 	{
 		"Ability3"		"custom_enigma_midnight_pulse"
     }
+    "npc_dota_hero_chen"
+	{
+		"Role"			"Support,Nuker,Disabler,Durable"
+		"Rolelevels"	"2,2,2,2"
+		"Complexity"	"3"
+		"HeroSelectSoundEffect"		"Hero_Chen.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Realitor"
+		"Ability1"		"custom_realitor_sealed_fate"
+		"Ability2"		"chen_holy_persuasion"
+		"Ability3"		"chen_divine_favor"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"chen_hand_of_god"
+		"Ability10"		"special_bonus_unique_custom_realitor_1"
+		"Ability11"		"special_bonus_unique_chen_3"
+		"Ability12"		"special_bonus_unique_custom_realitor_2"
+		"Ability13"		"special_bonus_unique_chen_8"
+		"Ability14"		"special_bonus_unique_chen_divine_favor_healing"
+		"Ability15"		"special_bonus_unique_custom_realitor_3"
+		"Ability16"		"special_bonus_unique_chen_12"
+		"Ability17"		"special_bonus_unique_chen_2"
+		
+		"Facets"
+		{
+			"chen_centaur_convert" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Grey"
+				"GradientID"		"3"
+			}
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"28"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.00000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.600000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"3.500000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_chen"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_chen.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_chen/chen_loadout.vpcf"		"loadout"
+			}
+		}
+	}
 }
 

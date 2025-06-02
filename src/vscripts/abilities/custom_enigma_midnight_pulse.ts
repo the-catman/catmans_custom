@@ -4,7 +4,7 @@ import { modifier_custom_enigma_midnight_pulse_thinker } from "../modifiers/modi
 @registerAbility()
 export class custom_enigma_midnight_pulse extends BaseAbility {
     sound_cast: string = "Hero_Enigma.Midnight_Pulse";
-    particle: string = "particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf";
+    particle_cast: string = "particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf";
 
     GetAOERadius(): number {
         return this.GetSpecialValueFor("radius");
