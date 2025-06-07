@@ -1,5 +1,6 @@
-import { BaseAbility, registerAbility } from "../lib/dota_ts_adapter";
-import { modifier_slowed } from "../modifiers/modifier_slowed";
+import { BaseAbility, registerAbility } from "../../lib/dota_ts_adapter";
+import { modifier_slowed } from "../../modifiers/modifier_slowed";
+
 
 @registerAbility()
 export class custom_realitor_sealed_fate extends BaseAbility {

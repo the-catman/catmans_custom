@@ -1,5 +1,5 @@
-import { BaseAbility, registerAbility } from "../lib/dota_ts_adapter";
-import { modifier_custom_enigma_midnight_pulse_thinker } from "../modifiers/modifier_custom_enigma_midnight_pulse_thinker";
+import { BaseAbility, registerAbility } from "../../lib/dota_ts_adapter";
+import { modifier_custom_enigma_midnight_pulse_thinker } from "../../modifiers/engima/modifier_custom_enigma_midnight_pulse_thinker";
 
 @registerAbility()
 export class custom_enigma_midnight_pulse extends BaseAbility {

@@ -6,7 +6,7 @@
 		//-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_lua"
         "AbilityTextureName"            "enigma_midnight_pulse"
-        "ScriptFile"                    "abilities/custom_enigma_midnight_pulse"
+        "ScriptFile"                    "abilities/enigma/custom_enigma_midnight_pulse"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -17,7 +17,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_MIDNIGHT_PULSE"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.1"
 
 		// Time		
@@ -32,6 +31,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCastRange"
+				{
+					"value"				"700"
+				}
 				"radius"					
 				{
 					"value"				"600"
@@ -57,13 +60,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-        "ScriptFile"                    "abilities/custom_realitor_sealed_fate"
+        "ScriptFile"                    "abilities/realitor/custom_realitor_sealed_fate"
 		"AbilitySound"					"Hero_Chen.PenitenceCast"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastRange"				"700 725 750 775"
 		"AbilityCastPoint"				"0.3"
 
 		// Cost
@@ -74,6 +76,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCastRange"
+			{
+				"value"				"700 725 750 775"
+			}
 			"AbilityCooldown"
 			{
 				"value"				"21 18 15 12"
@@ -100,6 +106,139 @@
 		}
 	}
 
+	"custom_realitor_cleanse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+		"AbilityTextureName"            "chen_holy_persuasion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ScriptFile"                    "abilities/realitor/custom_realitor_cleanse"
+		"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750 1000 1250 1500"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"48 24 12 6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"1.5"
+		}
+	}
+
+	"custom_realitor_perserverence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+		"AbilityTextureName"            "chen_divine_favor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ALLIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastAnimation"			"ACT_INVALID"
+        "ScriptFile"                    "abilities/realitor/custom_realitor_perserverence"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"resistance"
+			{
+				"value"					"10 14 18 22"
+				"special_bonus_unique_custom_realitor_6" "+3"
+			}
+			"radius"
+			{
+				"value"					"700"
+				"affected_by_aoe_increase" "1"
+			}
+			"ally_bonus"
+			{
+				"value"					"50"
+				"special_bonus_unique_custom_realitor_7" "+50"
+			}
+		}
+	}
+
+	"custom_realitor_transcendance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+		"AbilityTextureName"            "chen_hand_of_god"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "ScriptFile"                    "abilities/realitor/custom_realitor_transcendance"
+		"AbilitySound"					"Hero_Realitor.Transcendance"
+
+		"HasScepterUpgrade"   			"1"
+		"HasShardUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"240 210 180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300 450 600"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"				"15.0 20.0 25.0"
+				"special_bonus_unique_custom_realitor_4" "+5"
+				"special_bonus_scepter" "+5"
+			}
+			"health_restored"
+			{
+				"value"				"50"
+				"special_bonus_shard" "-50"
+			}
+			"stun_duration"
+			{
+				"value"					"1.0 1.5 2.0"
+				"special_bonus_unique_custom_realitor_5" "+0.5"
+				"special_bonus_scepter"	"+0.5"
+			}
+			"restore_delay"
+			{
+				"value"				"3"
+				"special_bonus_shard" "-3"
+			}
+		}
+	}
+
 	"special_bonus_unique_custom_realitor_1"
 	{
 		// General
@@ -108,6 +247,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+
 	"special_bonus_unique_custom_realitor_2"
 	{
 		// General
@@ -116,7 +256,44 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
+
 	"special_bonus_unique_custom_realitor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	"special_bonus_unique_custom_realitor_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	"special_bonus_unique_custom_realitor_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	"special_bonus_unique_custom_realitor_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	"special_bonus_unique_custom_realitor_7"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

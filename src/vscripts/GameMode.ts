@@ -15,6 +15,7 @@ declare global {
 @reloadable
 export class GameMode {
     public static Precache(this: void, context: CScriptPrecacheContext) {
+        PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context);
     }
 
     public static Activate(this: void) {
@@ -35,6 +36,7 @@ export class GameMode {
         GameRules.SetShowcaseTime(0);
         GameRules.SetHeroSelectionTime(20);
         GameRules.SetTimeOfDay(0.25);
+        GameRules.GetGameModeEntity().SetUseDefaultDOTARuneSpawnLogic(true);
         GameRules.SetNextBountyRuneSpawnTime(4);
     }
 

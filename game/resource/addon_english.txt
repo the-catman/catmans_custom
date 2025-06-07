@@ -24,6 +24,7 @@
 		"DOTA_Tooltip_Facet_chen_centaur_convert"								"Realibent"
 		"DOTA_Tooltip_Facet_chen_centaur_convert_Description"					"Realitor currently has no facets."
 
+		// Sealed fate
 		"DOTA_Tooltip_ability_custom_realitor_sealed_fate"						"Sealed Fate"
 		"DOTA_Tooltip_ability_custom_realitor_sealed_fate_Description"			"Silences all enemies in the target area. After the silence ends, deals damage, and additionally slows if the enemy is above the health threshold.\n\nDoes not slow nor silence creeps."
 		"DOTA_Tooltip_ability_custom_realitor_sealed_fate_Lore"					"Tired of trying to bend reality itself, Realitor instead dispatches enemies with a rather simple hex."
@@ -34,8 +35,41 @@
 		"DOTA_Tooltip_ability_custom_realitor_sealed_fate_damage"				"DAMAGE:"
 		"DOTA_Tooltip_ability_custom_realitor_sealed_fate_health_threshold"		"%HEALTH THRESHOLD:"
 
+		// Cleanse
+
+		"DOTA_Tooltip_ability_custom_realitor_cleanse"							"Cleanse"
+		"DOTA_Tooltip_ability_custom_realitor_cleanse_Description"				"Purges the target ally or enemy and disarms and mutes them for %duration% seconds.\n\nDISPEL TYPE: Basic Dispel"
+		"DOTA_Tooltip_ability_custom_realitor_cleanse_Lore"						"Stripped of will and word, the cleansed are left in silent submission."
+
+		// Perserverence
+		"DOTA_Tooltip_ability_custom_realitor_perserverence"					"Perserverence"
+		"DOTA_Tooltip_ability_custom_realitor_perserverence_Description"		"Increases Realitor's Magic and Status resistance. Allies within %radius% radius get %ally_bonus%%  of the bonus."
+		"DOTA_Tooltip_ability_custom_realitor_perserverence_Lore"				"Realitor's meddling of the fabric of existence has granted him unparalleled endurance."
+		"DOTA_Tooltip_ability_custom_realitor_perserverence_radius"				"RADIUS:"
+		"DOTA_Tooltip_ability_custom_realitor_perserverence_resistance"			"%RESISTANCE:"
+		"DOTA_Tooltip_ability_custom_realitor_perserverence_ally_bonus"			"%ALLY PERCENTAGE:"
+
+		"DOTA_Tooltip_modifier_custom_realitor_perserverence_effect"			"Perserverence"
+		"DOTA_Tooltip_modifier_custom_realitor_perserverence_effect_Description"		"Your magic and status resistances are increased!"
+
+		// Transcendance
+		"DOTA_Tooltip_ability_custom_realitor_transcendance"					"Transcendance"
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_Description"		"Stuns all heroes on the map, dealing a percentage of their max health as pure damage. After a few seconds, enemies have a percentage of their lost health restored.\n\nThis ability is not refreshable."
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_Lore"				"Realitor bends the fabric of existence, channeling his ultimate strength, an ancient force unparalleled in its destructive capabilities."
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_damage"				"%DAMAGE:"
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_health_restored"	"%HEALTH RESTORED:"
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_stun_duration"		"STUN DURATION:"
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_restore_delay"		"HEALTH RESTORE DELAY:"
+
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_scepter_description" "Increases damage and stun duration."
+		"DOTA_Tooltip_ability_custom_realitor_transcendance_shard_description"	"Enemies do not gain any lost health back."
+
 		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_1"			"+{s:bonus_damage} Sealed Fate Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_2"			"-{s:bonus_AbilityCooldown}s Sealed Fate Cooldown"
 		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_3"			"Sealed Fate Always Slows"
+		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_4"			"+{s:bonus_damage}% Transcendance Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_5"			"+{s:bonus_stun_duration}s Transcendance Stun"
+		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_6"			"+{s:bonus_resistance}% Perserverence"
+		"DOTA_Tooltip_ability_special_bonus_unique_custom_realitor_7"			"+{s:bonus_ally_bonus}% Perserverence Ally Bonus"
     }
 }
