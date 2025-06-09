@@ -25,7 +25,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 75 100 125"
+		"AbilityManaCost"				"50 80 110 140"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,8 +37,8 @@
 				}
 				"radius"					
 				{
-					"value"				"600"
-					"special_bonus_unique_enigma_9"	"+200"
+					"value"				"600 625 650 675"
+					"special_bonus_unique_enigma_9"	"+225"
 					"affected_by_aoe_increase"	"1"
 				}
 				"damage_percent"			"4.75 5.5 6.25 7"
@@ -87,7 +87,7 @@
 			}
 			"radius"					
 			{
-				"value"				"350"
+				"value"				"350 375 400 425"
 				"affected_by_aoe_increase"	"1"
 			}
 			"damage"
@@ -116,7 +116,6 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"ScriptFile"                    "abilities/realitor/custom_realitor_cleanse"

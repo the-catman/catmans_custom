@@ -10,19 +10,18 @@ export class custom_realitor_transcendance extends BaseAbility {
     }
 
     OnAbilityPhaseInterrupted(): void {
-        if (this.selfParticle) {
+        if (this.selfParticle && this.selfParticle !== -1) {
             ParticleManager.DestroyParticle(this.selfParticle, false);
             ParticleManager.ReleaseParticleIndex(this.selfParticle);
-            this.selfParticle = undefined;
         }
     }
 
     OnAbilityPhaseStart(): boolean {
-        this.selfParticle = this.CreateParticles("particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_atmoselec.vpcf", this.GetCaster(), false);
+        this.selfParticle = this.CreateParticle("particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_atmoselec.vpcf", this.GetCaster(), false);
         return true;
     }
 
-    CreateParticles(particleName: string, target: CDOTA_BaseNPC, release = true): ParticleID {
+    CreateParticle(particleName: string, target: CDOTA_BaseNPC, release = true): ParticleID {
         const particle = ParticleManager.CreateParticle(particleName, ParticleAttachment.ABSORIGIN_FOLLOW, target);
         ParticleManager.SetParticleControlEnt(
             particle,
@@ -40,9 +39,8 @@ export class custom_realitor_transcendance extends BaseAbility {
     OnSpellStart(): void {
         EmitGlobalSound("realitor_transcendance");
 
-        if (this.selfParticle) {
+        if (this.selfParticle && this.selfParticle !== -1) {
             ParticleManager.ReleaseParticleIndex(this.selfParticle);
-            this.selfParticle = undefined;
         }
 
         let enemies = FindUnitsInRadius(
@@ -84,12 +82,12 @@ export class custom_realitor_transcendance extends BaseAbility {
                     enemy.HealWithParams(heal, this, false, false, this.GetCaster(), false);
 
                     // Heal particles
-                    this.CreateParticles("particles/units/heroes/hero_chen/chen_hand_of_god.vpcf", enemy);
+                    this.CreateParticle("particles/units/heroes/hero_chen/chen_hand_of_god.vpcf", enemy);
                 });
             }
 
             // Damage particles
-            this.CreateParticles("particles/units/heroes/hero_chen/chen_hand_of_god_martyr_damage.vpcf", enemy);
+            this.CreateParticle("particles/units/heroes/hero_chen/chen_hand_of_god_martyr_damage.vpcf", enemy);
         }
     }
 }

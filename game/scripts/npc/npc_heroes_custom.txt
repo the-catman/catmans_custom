@@ -9,7 +9,7 @@
 	{
 		"Role"			"Support,Nuker,Disabler,Durable"
 		"Rolelevels"	"2,2,2,2"
-		"Complexity"	"3"
+		"Complexity"	"2"
 		"HeroSelectSoundEffect"		"Hero_Chen.Pick"
 		"GibType"		"default"
 		"NameAliases"	"Realitor"
@@ -40,7 +40,7 @@
 
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"24"
+		"AttackDamageMin"		"26"
 		"AttackDamageMax"		"28"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.500000"

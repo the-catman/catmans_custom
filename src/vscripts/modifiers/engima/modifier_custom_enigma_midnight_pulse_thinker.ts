@@ -5,7 +5,7 @@ export class modifier_custom_enigma_midnight_pulse_thinker extends BaseModifier 
     radius!: number;
     damage_percent!: number;
     tick_rate!: number;
-    particle!: ParticleID;
+    particle: ParticleID | undefined;
 
     IsHidden() { return true; }
 
@@ -46,26 +46,27 @@ export class modifier_custom_enigma_midnight_pulse_thinker extends BaseModifier 
             this.radius,
             UnitTargetTeam.ENEMY,
             UnitTargetType.HERO + UnitTargetType.BASIC,
-            UnitTargetFlags.MAGIC_IMMUNE_ENEMIES,
+            UnitTargetFlags.NONE,
             FindOrder.ANY,
             false
         );
 
         for (const enemy of enemies) {
-            ApplyDamage({
-                victim: enemy,
-                attacker: caster,
-                ability: this.GetAbility(),
-                damage: this.damage_percent * enemy.GetMaxHealth() * this.tick_rate / 100,
-                damage_type: DamageTypes.PURE,
-                damage_flags: DamageFlag.NONE
-            })
+            if (!(enemy.IsAncient() && !enemy.IsCreepHero())) {
+                ApplyDamage({
+                    victim: enemy,
+                    attacker: caster,
+                    ability: this.GetAbility(),
+                    damage: this.damage_percent * enemy.GetMaxHealth() * this.tick_rate / 100,
+                    damage_type: DamageTypes.PURE,
+                    damage_flags: DamageFlag.NONE
+                });
+            }
         }
     }
 
     OnDestroy(): void {
-        if (this.particle !== -1) {
-            ParticleManager.DestroyParticle(this.particle, false);
+        if (this.particle && this.particle !== -1) {
             ParticleManager.ReleaseParticleIndex(this.particle);
         }
         StopSoundOn("Hero_Enigma.Midnight_Pulse", this.GetCaster() as CDOTA_BaseNPC);
