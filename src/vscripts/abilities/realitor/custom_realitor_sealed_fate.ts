@@ -4,15 +4,12 @@ import { modifier_slowed } from "../../modifiers/modifier_slowed";
 
 @registerAbility()
 export class custom_realitor_sealed_fate extends BaseAbility {
-    sound_cast: string = "Hero_Chen.PenitenceCast";
-    particle_cast: string = "particles/units/heroes/hero_chen/chen_penitence.vpcf";
-
     GetAOERadius(): number {
         return this.GetSpecialValueFor("radius");
     }
 
     private CreateFollowParticle(target: CDOTA_BaseNPC, duration: number): void {
-        const particle = ParticleManager.CreateParticle(this.particle_cast, ParticleAttachment.ABSORIGIN_FOLLOW, target);
+        const particle = ParticleManager.CreateParticle("particles/units/heroes/hero_chen/chen_penitence.vpcf", ParticleAttachment.ABSORIGIN_FOLLOW, target);
         ParticleManager.SetParticleControlEnt(
             particle,
             0,
@@ -22,10 +19,7 @@ export class custom_realitor_sealed_fate extends BaseAbility {
             target.GetAbsOrigin(),
             true
         );
-        Timers.CreateTimer(duration, () => {
-            ParticleManager.DestroyParticle(particle, false);
-            ParticleManager.ReleaseParticleIndex(particle);
-        });
+        ParticleManager.ReleaseParticleIndex(particle);
     }
 
     private DealDamage(target: CDOTA_BaseNPC): void {
@@ -40,22 +34,20 @@ export class custom_realitor_sealed_fate extends BaseAbility {
     }
 
     OnSpellStart(): void {
-        this.EmitSound(this.sound_cast);
+        this.EmitSound("Hero_Chen.PenitenceCast");
 
         const caster = this.GetCaster();
         const origin = this.GetCursorPosition();
 
-        const radius = this.GetSpecialValueFor("radius");
         const slowDuration = this.GetSpecialValueFor("slow_duration");
         const silenceDuration = this.GetSpecialValueFor("silence_duration");
-        const moveSpeedBonus = this.GetSpecialValueFor("bonus_movement_speed");
         const healthThreshold = this.GetSpecialValueFor("health_threshold") / 100;
 
         const enemies = FindUnitsInRadius(
             caster.GetTeamNumber(),
             origin,
             undefined,
-            radius,
+            this.GetSpecialValueFor("radius"),
             UnitTargetTeam.ENEMY,
             UnitTargetType.HERO + UnitTargetType.BASIC,
             UnitTargetFlags.NONE,
@@ -64,6 +56,7 @@ export class custom_realitor_sealed_fate extends BaseAbility {
         );
 
         for (const enemy of enemies) {
+            EmitSoundOn("Hero_Chen.PenitenceImpact", enemy);
             // Silence particle
             this.CreateFollowParticle(enemy, silenceDuration);
 
@@ -75,7 +68,7 @@ export class custom_realitor_sealed_fate extends BaseAbility {
                     if ((enemy.GetHealth() / enemy.GetMaxHealth()) > healthThreshold) {
                         enemy.AddNewModifier(caster, this, modifier_slowed.name, {
                             duration: slowDuration,
-                            bonus_movement_speed: moveSpeedBonus
+                            bonus_movement_speed: this.GetSpecialValueFor("bonus_movement_speed")
                         });
 
                         // Slow particle

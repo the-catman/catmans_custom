@@ -3,16 +3,47 @@ import { BaseAbility, registerAbility } from "../../lib/dota_ts_adapter";
 
 @registerAbility()
 export class custom_realitor_transcendance extends BaseAbility {
+    selfParticle: ParticleID | undefined;
+
     IsRefreshable(): boolean {
         return false;
     }
 
+    OnAbilityPhaseInterrupted(): void {
+        if (this.selfParticle) {
+            ParticleManager.DestroyParticle(this.selfParticle, false);
+            ParticleManager.ReleaseParticleIndex(this.selfParticle);
+            this.selfParticle = undefined;
+        }
+    }
+
     OnAbilityPhaseStart(): boolean {
+        this.selfParticle = this.CreateParticles("particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_atmoselec.vpcf", this.GetCaster(), false);
         return true;
+    }
+
+    CreateParticles(particleName: string, target: CDOTA_BaseNPC, release = true): ParticleID {
+        const particle = ParticleManager.CreateParticle(particleName, ParticleAttachment.ABSORIGIN_FOLLOW, target);
+        ParticleManager.SetParticleControlEnt(
+            particle,
+            1,
+            target,
+            ParticleAttachment.ABSORIGIN_FOLLOW,
+            "hitloc",
+            target.GetAbsOrigin(),
+            true
+        );
+        if (release) ParticleManager.ReleaseParticleIndex(particle);
+        return particle;
     }
 
     OnSpellStart(): void {
         EmitGlobalSound("realitor_transcendance");
+
+        if (this.selfParticle) {
+            ParticleManager.ReleaseParticleIndex(this.selfParticle);
+            this.selfParticle = undefined;
+        }
 
         let enemies = FindUnitsInRadius(
             this.GetTeamNumber(),
@@ -51,8 +82,14 @@ export class custom_realitor_transcendance extends BaseAbility {
                 Timers.CreateTimer(this.GetSpecialValueFor("restore_delay"), () => {
                     const heal = damage * this.GetSpecialValueFor("health_restored") / 100;
                     enemy.HealWithParams(heal, this, false, false, this.GetCaster(), false);
+
+                    // Heal particles
+                    this.CreateParticles("particles/units/heroes/hero_chen/chen_hand_of_god.vpcf", enemy);
                 });
             }
+
+            // Damage particles
+            this.CreateParticles("particles/units/heroes/hero_chen/chen_hand_of_god_martyr_damage.vpcf", enemy);
         }
     }
 }
