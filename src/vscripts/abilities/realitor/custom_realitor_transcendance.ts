@@ -67,6 +67,8 @@ export class custom_realitor_transcendance extends BaseAbility {
 
             const damage = this.GetSpecialValueFor("damage") * enemy.GetMaxHealth() / 100;
 
+            const healthBefore = enemy.GetHealth();
+
             ApplyDamage({
                 victim: enemy,
                 attacker: this.GetCaster(),
@@ -76,9 +78,12 @@ export class custom_realitor_transcendance extends BaseAbility {
                 damage_flags: DamageFlag.NONE
             });
 
+            const healthAfter = enemy.GetHealth();
+            const actualDamage = Math.max(healthBefore - healthAfter, 0);
+
             if (!casterHasShard) {
                 Timers.CreateTimer(this.GetSpecialValueFor("restore_delay"), () => {
-                    const heal = damage * this.GetSpecialValueFor("health_restored") / 100;
+                    const heal = actualDamage * this.GetSpecialValueFor("health_restored") / 100;
                     enemy.HealWithParams(heal, this, false, false, this.GetCaster(), false);
 
                     // Heal particles

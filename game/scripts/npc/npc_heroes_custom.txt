@@ -1,10 +1,6 @@
 "DOTAHeroes"
 {
     "Version" "1"
-    "npc_dota_hero_enigma"
-	{
-		"Ability3"		"custom_enigma_midnight_pulse"
-    }
     "npc_dota_hero_chen"
 	{
 		"Role"			"Support,Nuker,Disabler,Durable"
@@ -67,6 +63,16 @@
 				"particles/units/heroes/hero_chen/chen_loadout.vpcf"		"loadout"
 			}
 		}
+	}
+
+    "npc_dota_hero_enigma"
+	{
+		"Ability3"		"custom_enigma_midnight_pulse"
+    }
+
+	"npc_dota_hero_skywrath_mage"
+	{
+		"ArmorPhysical"		"-1"
 	}
 }
 
