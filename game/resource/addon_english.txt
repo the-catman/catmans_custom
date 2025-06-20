@@ -14,7 +14,7 @@
 		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_Lore"				"A section of the world slowly descends into the void."
 		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_Note0"				"This ability destroys trees in its area."
 		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_duration"			"DURATION:"
-		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_damage_percent"		"%MAX HEALTH AS DAMAGE:"
+		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_damage"				"%MAX HEALTH AS DAMAGE:"
 		"DOTA_Tooltip_ability_custom_enigma_midnight_pulse_radius"				"RADIUS:"
 
 		// Chen/Realitor

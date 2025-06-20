@@ -34,7 +34,7 @@
 				{
 					"value"				"700"
 				}
-				"damage_percent"			"3.25 4 4.75 5.5"
+				"damage"				"3.25 4.0 4.75 5.5"
 				"radius"					
 				{
 					"value"				"600"
